@@ -382,6 +382,6 @@ def _rref(M, iszerofunc=_iszero, simplify=False, pivots=True,
                 normalize_last, normalize=True, zero_above=True)
 
     if pivots:
-        return mat, pivot_cols
+        return (mat, pivot_cols, _)
     else:
         return mat
