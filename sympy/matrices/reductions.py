@@ -107,6 +107,7 @@ def _row_reduce_list(mat, rows, cols, one, iszerofunc, simpfunc,
                 continue
 
             cross_cancel(pivot_val, row, val, piv_row)
+            swaps.append((pivot_val, row, val, piv_row))
         piv_row += 1
 
     # normalize each row
