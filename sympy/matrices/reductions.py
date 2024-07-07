@@ -55,7 +55,7 @@ def _row_reduce_list(mat, rows, cols, one, iszerofunc, simpfunc,
         """Does the row op row[i] = a*row[i] - b*row[j]"""
         q = (j - i)*cols
         for p in range(i*cols, (i + 1)*cols):
-            mat[p] = isimp(a*mat[p] - b*mat[p + q])
+            mat[p] = isimp((a*mat[p] - b*mat[p + q])%2)
 
     isimp = _get_intermediate_simp(_dotprodsimp)
     piv_row, piv_col = 0, 0
